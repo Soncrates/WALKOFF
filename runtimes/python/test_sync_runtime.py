@@ -7,10 +7,7 @@ import os
 
 sys.path.append(os.path.abspath('../..'))
 
-if sys.version_info[0] == 2:
-    pp = os.path.abspath('../../apps')
-    print('appending {}'.format(pp))
-    sys.path.append(pp)
+print('HERHERHEHRE')
 
 import jwt
 import pytest
