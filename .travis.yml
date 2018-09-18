@@ -97,6 +97,25 @@ matrix:
           - master
           - development
 
+    - language: python
+      os: linux
+      python: "3.4"
+      name: "Python 3.4 Runtime Unit Tests"
+      services:
+        - redis-server
+      install:
+        - pip install -r requirements.txt
+        - pip install -r requirements-test.txt
+        - pip install -r runtimes/python/requirements.txt
+        - pip install -r runtimes/python/requirements-test.txt
+      script:
+        - cd runtimes/python
+        - pytest -s -v
+      branches:
+        only:
+          - master
+          - development
+
 #    - language: python
 #      os: linux
 #      python: "3.4"
@@ -122,8 +141,7 @@ matrix:
 #      name: "Python 3.5 Runtime Unit Tests"
 #      services:
 #        - redis-server
-#      install:
-#        - pip install -r requirements.txt
+#      install:#        - pip install -r requirements.txt
 #        - pip install -r requirements-test.txt
 #        - pip install -r runtimes/python/requirements.txt
 #        - pip install -r runtimes/python/requirements-test.txt
