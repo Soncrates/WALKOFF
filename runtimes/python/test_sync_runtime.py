@@ -7,6 +7,9 @@ import os
 
 sys.path.append(os.path.abspath('../..'))
 
+if sys.version[0] == 2:
+    sys.path.append(os.path.abspath('../../apps'))
+
 import jwt
 import pytest
 import syncruntime as runtime
